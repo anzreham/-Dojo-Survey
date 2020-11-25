@@ -1,0 +1,15 @@
+
+
+div.form-group input, label, select, button { margin: 8px; display: block }
+body{
+  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  }
+
+
+  div.form-group{
+    
+    width: 740px;
+    min-height: 500px;
+    margin: 0 auto; 
+   
+}

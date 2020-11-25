@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+
+<title>Document</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'djangoapp/css/style.css' %}">    
+      <script src="{% static 'djangoapp/js/script.js' %}"></script>
+
+     
+</head>
+<body>
+
+<div class="form-group">
+<form action='result' method='post'>
+    {% csrf_token %}
+    
+    <label for="exampleFormControlSelect2">Name: </label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name='name'>
+    <label for="exampleFormControlSelect2">  Email:  </label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name='email'>
+    
+    <label for="exampleFormControlSelect2">Choose a Languaget</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2"  data-placeholder="Choose a Language..."  name="language">
+
+ 
+        <option value="Afrikaans">Afrikaans</option>
+        <option value="Albanian">Albanian</option>
+        <option value="Arabic">Arabic</option>
+        <option value="Armenian">Armenian</option>
+        <option value="Basque">Basque</option>
+        <option value="Bengali">Bengali</option>
+        <option value="Bulgarian">Bulgarian</option>
+        <option value="Catalan">Catalan</option>
+        <option value="Cambodian">Cambodian</option>
+        <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+        <option value="Croatian">Croatian</option>
+        <option value="Czech">Czech</option>
+        <option value="Danish">Danish</option>
+        <option value="Dutch">Dutch</option>
+        <option value="English">English</option>
+        <option value="Estonian">Estonian</option>
+        <option value="Fiji">Fiji</option>
+        <option value="Finnish">Finnish</option>
+        <option value="French">French</option>
+        <option value="Georgian">Georgian</option>
+        <option value="German">German</option>
+        <option value="Greek">Greek</option>
+        <option value="Gujarati">Gujarati</option>
+        <option value="Hebrew">Hebrew</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Hungarian">Hungarian</option>
+        <option value="Icelandic">Icelandic</option>
+        <option value="Indonesian">Indonesian</option>
+        <option value="Irish">Irish</option>
+        <option value="Italian">Italian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Javanese">Javanese</option>
+        <option value="Korean">Korean</option>
+        <option value="Latin">Latin</option>
+        <option value="Latvian">Latvian</option>
+        <option value="Lithuanian">Lithuanian</option>
+        <option value="Macedonian">Macedonian</option>
+        <option value="Malay">Malay</option>
+        <option value="Malayalam">Malayalam</option>
+        <option value="Maltese">Maltese</option>
+        <option value="Maori">Maori</option>
+        <option value="Marathi">Marathi</option>
+        <option value="Mongolian">Mongolian</option>
+        <option value="Nepali">Nepali</option>
+        <option value="Norwegian">Norwegian</option>
+        <option value="Persian">Persian</option>
+        <option value="Polish">Polish</option>
+        <option value="Portuguese">Portuguese</option>
+        <option value="Punjabi">Punjabi</option>
+        <option value="Quechua">Quechua</option>
+        <option value="Romanian">Romanian</option>
+        <option value="Russian">Russian</option>
+        <option value="Samoan">Samoan</option>
+        <option value="Serbian">Serbian</option>
+        <option value="Slovak">Slovak</option>
+        <option value="Slovenian">Slovenian</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Swahili">Swahili</option>
+        <option value="Swedish ">Swedish </option>
+        <option value="Tamil">Tamil</option>
+        <option value="Tatar">Tatar</option>
+        <option value="Telugu">Telugu</option>
+        <option value="Thai">Thai</option>
+        <option value="Tibetan">Tibetan</option>
+        <option value="Tonga">Tonga</option>
+        <option value="Turkish">Turkish</option>
+        <option value="Ukrainian">Ukrainian</option>
+        <option value="Urdu">Urdu</option>
+        <option value="Uzbek">Uzbek</option>
+        <option value="Vietnamese">Vietnamese</option>
+        <option value="Welsh">Welsh</option>
+        <option value="Xhosa">Xhosa</option>
+      </select>
+
+
+      <label for="country">Global Region</label>
+  <select multiple class="form-control" id="country"  data-placeholder="Choose a Language..."  name="country">
+
+  <optgroup>
+    <option value="Any">Any</option>
+  </optgroup>
+  <optgroup label="EMEA">
+          <option value="England">England</option>
+          <option value="Germany">Germany</option>
+          <option value="Austria">Austria</option>
+
+  </optgroup>
+  <optgroup label="APAC">
+          <option value="Australia">Australia</option>
+          <option value="Japan">Japan</option>
+  </optgroup>
+  </select>
+  <p>How many siblings do you have?</p>
+  <div class="form-check-inline">
+    <label class="form-check-label" for="radio1">
+      <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>1
+    </label>
+  </div>
+  <div class="form-check-inline">
+    <label class="form-check-label" for="radio2">
+      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2"> 2
+    </label>
+  </div>
+  
+<div class="form-check-inline">
+    <label class="form-check-label" for="radio2">
+      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2"> 3
+    </label>
+  </div>
+  
+  
+  <div class="form-check-inline">
+    <label class="form-check-label" for="radio2">
+      <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">more than 3
+    </label>
+  </div>
+
+
+
+  <p>What do you like to do in free time?</p>
+
+    <div class="form-check-inline">
+      <label class="form-check-label" for="check1">
+        <input type="checkbox" class="form-check-input" id="check1" name="one" value="Watch TV" checked> Watch TV
+      </label>
+    </div>
+    <div class="form-check-inline">
+      <label class="form-check-label" for="check2">
+        <input type="checkbox" class="form-check-input" id="check2" name="two" value="Play Video Games">Play Video Games
+      </label>
+    </div>
+    
+    <div class="form-check-inline">
+      <label class="form-check-label" for="check2">
+        <input type="checkbox" class="form-check-input" id="check2" name="three" value="Sport">Sport
+    </div>
+
+
+
+  <label for="exampleFormControlTextarea1">Optional </label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="Optional"></textarea>
+
+
+    <button type='submit'   class="btn btn-dark">Submit</button>
+</form>
+</div>
+</body>
+</html>
